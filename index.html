@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora - Otavio Kozak</title>
+    <title>Scientific Calculator - Otavio Kozak</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
@@ -14,79 +14,74 @@
 
 
         <div class="buttons">
-            
+
             <button class="btn grey">2<sup>nd</sup></button>
-            <button class="btn grey">π</button>    
+            <button class="btn grey">π</button>
             <button class="btn grey">e</em></button>
-            <button class="btn grey">C</button>
-            <button class="btn grey">DEL</button>
-            
-            <button class="btn grey">x^2</button>
+            <button class="btn grey" onclick="clean()">C</button>
+            <button class="btn grey" onclick="deleteLast('')">DEL</button>
+
+            <button class="btn grey">x²</button>
             <button class="btn grey">1/x</button>
             <button class="btn grey">|x|</button>
             <button class="btn grey">exp</button>
-            <button class="btn grey">mod</button>
+            <button class="btn grey" onclick="showInDisplay('mod')">mod</button>
 
             <button class="btn grey">2√x</button>
             <button class="btn grey">(</button>
             <button class="btn grey">)</button>
             <button class="btn grey">n!</button>
-            <button class="btn grey">/</button>
-            
+            <button class="btn grey" onclick="showInDisplay('÷')">÷</button>
+
             <button class="btn grey">x^y</button>
-            <button class="btn lightGrey">7</button>
-            <button class="btn lightGrey">8</button>
-            <button class="btn lightGrey">9</button>
-            <button class="btn grey">X</button>
+            <button class="btn lightGrey" onclick="showInDisplay('7')">7</button>
+            <button class="btn lightGrey" onclick="showInDisplay('8')">8</button>
+            <button class="btn lightGrey" onclick="showInDisplay('9')">9</button>
+            <button class="btn grey" onclick="showInDisplay('x')">X</button>
 
             <button class="btn grey">10^x</button>
-            <button class="btn lightGrey">4</button>
-            <button class="btn lightGrey">5</button>
-            <button class="btn lightGrey">6</button>
-            <button class="btn grey">-</button>
+            <button class="btn lightGrey" onclick="showInDisplay('4')">4</button>
+            <button class="btn lightGrey" onclick="showInDisplay('5')">5</button>
+            <button class="btn lightGrey" onclick="showInDisplay('6')">6</button>
+            <button class="btn grey" onclick="showInDisplay('-')">-</button>
 
             <button class="btn grey">log</button>
-            <button class="btn lightGrey">1</button>
-            <button class="btn lightGrey">2</button>
-            <button class="btn lightGrey">3</button>
-            <button class="btn grey">+</button>
-            
+            <button class="btn lightGrey" onclick="showInDisplay('1')">1</button>
+            <button class="btn lightGrey" onclick="showInDisplay('2')">2</button>
+            <button class="btn lightGrey" onclick="showInDisplay('3')">3</button>
+            <button class="btn grey" onclick="showInDisplay('+')">+</button>
+
             <button class="btn grey">ln</button>
-            <button class="btn lightGrey">+/-</button>
-            <button class="btn lightGrey">0</button>
-            <button class="btn lightGrey">.</button>
-            <button class="btn blue">=</button>
-
-            <!--<button class="btn lightGrey" onclick="showInDisplay()">π</button>
-            <button class="btn lightGrey" onclick="clean()">CE</button>
             <button class="btn lightGrey" onclick="reverse('+/-')">+/-</button>
-            <button class="btn lightGrey" onclick="showInDisplay('%')">%</button>
-            <button class="btn blue" onclick="showInDisplay('/')">/</button>
-
-
-            <button class="btn grey" onclick="showInDisplay('7')">7</button>
-            <button class="btn grey" onclick="showInDisplay('8')">8</button>
-            <button class="btn grey" onclick="showInDisplay('9')">9</button>
-            <button class="btn blue" onclick="showInDisplay('*')">X</button>
-
-
-            <button class="btn grey" onclick="showInDisplay('4')">4</button>
-            <button class="btn grey" onclick="showInDisplay('5')">5</button>
-            <button class="btn grey" onclick="showInDisplay('6')">6</button>
-            <button class="btn blue" onclick="showInDisplay('-')">-</button>
+            <button class="btn lightGrey" onclick="showInDisplay('0')">0</button>
+            <button class="btn lightGrey" onclick="showInDisplay('.')">.</button>
+            <button class="btn blue" onclick="result('')">=</button>
 
 
 
-            <button class="btn grey" onclick="showInDisplay('1')">1</button>
-            <button class="btn grey" onclick="showInDisplay('2')">2</button>
-            <button class="btn grey" onclick="showInDisplay('3')">3</button>
-            <button class="btn blue" onclick="showInDisplay('+')">+</button>
 
 
-            <button class="btn grey" onclick="showInDisplay('.')">.</button>
-            <button class="btn grey" onclick="showInDisplay('0')">0</button>
-            <button class="btn grey" onclick="deleteLast('')">DEL</button>
-            <button class="btn blue" onclick="result('')">=</button>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
     </div>
 

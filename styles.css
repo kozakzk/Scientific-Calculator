@@ -19,7 +19,7 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 
 #display {
@@ -40,8 +40,9 @@ body {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(7, 1fr);
-    gap: 16px;
+    gap: 2px;
     flex: 1;
+   
 }
 
 .btn {
