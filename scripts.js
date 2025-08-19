@@ -1,5 +1,5 @@
 // shows the input on display and validates inputs 
-function showInDisplay(value) { 
+function showInDisplay(value) {
     const display = document.querySelector('#display');
     const operators = ['+', '-', '*', '/', '%'];
 
@@ -25,17 +25,6 @@ function showInDisplay(value) {
     display.value += value;
 }
 
-// cleans the display
-function clean() {
-    document.querySelector('#display').value = ''
-}
-
-// deletes the last input
-function deleteLast() {
-    const display = document.querySelector('#display')
-    display.value = display.value.slice(0, -1)
-}
-
 // displays the result calculated through the eval() method
 function result() {
     const display = document.querySelector('#display')
@@ -51,3 +40,15 @@ function reverse() {
     const display = document.querySelector('#display')
     display.value = display.value * -1
 }
+
+// cleans the display
+function clean() {
+    document.querySelector('#display').value = ''
+}
+
+// deletes the last input
+function deleteLast() {
+    const display = document.querySelector('#display')
+    display.value = display.value.slice(0, -1)
+}
+
