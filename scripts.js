@@ -2,6 +2,12 @@
 function showInDisplay(value) {
     const display = document.querySelector('#display');
     const operators = ['+', '-', '*', '/', '%', '(', ')', 'E'];
+    const lastChar = display.value.slice(-1);
+
+    if(value == '(' && (/\d|\)/.test(lastChar))){
+        display.value += '*(';
+        return;
+    }
 
     // validation to secure the correct use of the arithmetic operators
     if (operators.includes(value)) {
@@ -49,7 +55,12 @@ function result() {
     const display = document.querySelector('#display');
     try {
         let expression = display.value.replace(/E/gi, '*10**');
-        display.value = eval(display.value);
+        const open = (expression.match(/\(/g) || []).length;
+        const close = (expression.match(/\)/g) || []).length;
+        if (open > close){
+            expression += ')'.repeat(open - close);
+        }
+        display.value = eval(expression);
     } catch {
         display.value = 'ERROR';
     }
@@ -73,11 +84,21 @@ function deleteLast() {
 }
 
 function pi() {
-    display.value += 3.141592653589793;
+    const display = document.querySelector('#display');
+    const lastChar = display.value.slice(-1);
+    if (display.value == '' || ['+', '-', '/', '*', '%', '(', 'E', ].includes(lastChar)){
+        display.value += 3.141592653589793;
+    }
 }
 
 function euler() {
-    display.value += 2.718281828459045;
+    const display = document.querySelector('#display');
+    const lastChar = display.value.slice(-1);
+    if (display.value === '' || ['+', '-', '*', '/', '%', '(', 'E'].includes(lastChar)){
+        display.value += 2.718281828459045;
+    }    
+    
+    
 }
 
 function sin() {
