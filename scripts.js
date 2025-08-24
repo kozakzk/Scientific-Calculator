@@ -1,13 +1,32 @@
 
 function showInDisplay(value) {
     const display = document.querySelector('#display');
-    const operators = ['+', '-', '*', '/', '%', '(', ')'];
+    const operators = ['+', '-', '*', '/', '%', '(', ')', 'E'];
 
     // validation to secure the correct use of the arithmetic operators
     if (operators.includes(value)) {
         const lastChar = display.value.slice(-1);
 
-        if (operators.includes(lastChar)) {
+        // condition to allow '(' after an operator or at the start
+        if (value == '('){
+            if (display.value == '' || operators.includes(lastChar) && lastChar !== ')'){
+                display.value += value;
+                return;
+            }
+        }
+        // condition to allow ')' only if there is a matching '(' and lastChar is not an operator
+        if (value == ')'){
+            const open = (display.value.match(/\(/g) || []).length;
+            const close = (display.value.match(/\)/g) || []).length;
+            if (open > close && !operators.includes(lastChar)){
+                display.value += value;
+                return;
+            }else{
+                return;
+            }
+        }
+
+        if (operators.includes(lastChar) && lastChar !== ')' && value !== '(') {
             display.value = display.value.slice(0, -1) + value;
             return;
         }
@@ -29,6 +48,7 @@ function showInDisplay(value) {
 function result() {
     const display = document.querySelector('#display');
     try {
+        let expression = display.value.replace(/E/gi, '*10**');
         display.value = eval(display.value);
     } catch {
         display.value = 'ERROR';
@@ -72,7 +92,7 @@ function tan() {
     display.value = Math.tan(display.value);
 }
 
-//function 
+// squared root
 function sqrt() {
     display.value = Math.sqrt(display.value, 2);
 }
@@ -87,7 +107,7 @@ function log() {
     display.value = Math.log10(display.value);
 }
 
-// recursive factorial function
+// recursive factorial function //To be optimized
 function factorial() {
     var i, num, f;
     f = 1;
@@ -102,11 +122,8 @@ function factorial() {
 
 // x (times 10 powered to y)
 function exp() {
-    var num;
-    num = display.value;
-    
-    resultado = num * Math.pow(10, y);
-    return resultado;
+    const display = document.querySelector('#display');
+    display.value += 'E';
 }
 
 // returns the absolute value of the number
